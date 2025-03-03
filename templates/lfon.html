@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>toggle switch</title>
+</head>
+<style>
+
+    body{
+        background: linear-gradient(90deg, #C7C5F4, #776BCC);		
+    }
+    h1{
+        color: #000000;; 
+        font-size:xx-large;
+    }
+    button{
+        width: 10%;
+        color: #080710;
+        padding: 15px 0;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+        
+    }
+    .screen {		
+	background: linear-gradient(90deg, #5D54A4, #7C78B8);		
+	position: relative;	
+	height: 450px;
+	width: 760px;	
+	box-shadow: 0px 0px 24px #5C5696;
+  margin-top: 9vb;
+  border-radius: 5%;
+  }
+  .switch {
+            position: relative;
+            display: inline-block;
+            width: 75px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+  
+
+</style>
+<body>
+
+
+    <form action="/login">
+        <a href="\login" style="margin-left: 93%;font-size: xx-large;">Logout</a>
+    </form>
+    <div>
+        <h1 style="margin-right: 40%;margin-top: 20px;"><u>Fan status: </u></h1>
+        <h1 style="margin-right: 50%;color:green"> ON</h1>
+        <h1 style="margin-right: 50%;"><u>Light status: </u></h1>
+        <h1 style="margin-right: 50%;color:green"> ON</h1>
+        <div style="margin: -15%;">
+        </div>
+    
+        <div class="screen" style="margin-left:31%;margin-top:10%;" >        
+        
+
+        
+        <br><h1 style="margin-left: 15%;position:relative; top:3px">Fan Switch</h1>
+
+        <form action="/lfon">
+            <a href="\lfon"></a><button class="switch"style="color: green; font-size: x-large; border-radius: 20px;margin-left: 13%; ">ON</button></a>
+        </form>
+        <div><form action="/lo_foff">
+            <a href="\lo_foff"></a><button class="switch" style="color: red; font-size: x-large; border-radius: 20px;margin-left: 21%;position:relative; bottom:40px;left: 40px; ">OFF</button></a>
+        </form></div>
+
+        <h1 style="margin-left: 66%;position:relative; bottom:160px">Light Switch</h1>
+        <form action="/lfon">
+            <a href="\lfon"></a><button class="switch" style="color: green; font-size: x-large; border-radius: 20px;margin-left: 65%;position:relative; bottom:165px">ON</button></a>
+        </form>
+        <form action="/loff_fon">
+            <a href="\loff_fon"></a><button class="switch" style="color: red; font-size: x-large; border-radius: 20px;margin-left: 78%;position:relative; bottom:206px">OFF</button></a>
+        </form>
+
+
+        <h1 style="margin-left: 38%;position:relative; bottom:80px">Master Button</h1>
+        <form action="/lfon">
+            <a href="\lfon"></a><button class="switch" style="color: green; font-size: x-large; border-radius: 20px;margin-left: 40%;position:relative; bottom:80px">ON</button></a>
+        </form>
+        <form action="/lfoff">
+            <a href="\lfoff"></a><button class="switch" style="color: red; font-size: x-large; border-radius: 20px;margin-left: 53%;position:relative; bottom:120px">OFF</button></a>
+        </form>
+
+</body>
+</html>

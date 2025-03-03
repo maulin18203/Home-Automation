@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="76x76" href="../static/apple-icon.png">
+    <link rel="icon" type="image/png" href="../static/favicon.png">
+    <title>
+        Home Automation
+    </title>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="../static/nucleo-icons.css" rel="stylesheet" />
+    <link href="../static/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="../static/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="../static/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+            /* Hide default HTML checkbox */
+            .switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+        /* The slider */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+            .slider.round:before {
+                border-radius: 50%;
+            }
+  body{
+  background: #0a0a23;
+  min-height:10vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+}
+
+select{
+  border:none;
+  padding: 10px 20px;
+  border-radius:5px;
+}
+
+select:focus{
+  outline:none;
+}
+button{
+  position:relative; top:-10px;left: 40px;
+}
+    </style>
+</head>
+
+<body class="g-sidenav-show   bg-gray-100">
+  
+    <div class="min-height-300 bg-primary position-absolute w-100"></div>
+    
+    <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
+      <div class="sidenav-header">
+        <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+        <a class="navbar-brand m-0" target="_blank">
+          <img src="../static/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
+          <span class="ms-1 font-weight-bold">Home Automation</span>
+        </a>
+      </div>
+      <hr class="horizontal dark mt-0">
+      <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard">
+              <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">Dashboard</span>
+            </a>
+          </li>
+         
+          <li class="nav-item">
+            
+            <a class="nav-link" href="/Devices">
+              <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-collection text-info text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">Devices</span>
+            </a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link " href="/user">
+              <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">User</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active " href="/feedback">
+              <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">Feedback</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+    <main class="main-content position-relative border-radius-lg ">
+      
+      <form class="login" method = "POST"><div style="margin-bottom: 4%;text-align: justify;color: #453a9a; ">
+        <br><br><h1>User Feedback</h1>
+        <br><br><br>
+				<div class="login__field">
+				</div>
+          
+
+				<select name="username_name" id="username_name">
+          <option none="">Please Select Users</option>
+          <option value="om">OM Joshi</option>
+          <option value="manthan">Manthan</option>
+          <option value="mk">Maulin</option>
+          <option value="smit">Smit</option>
+          </select>
+
+          
+          <a href="/sql-data"></a>
+          <button type="submit" name="submit" style="border:none; position:relative;margin-right: 24%;border-radius:5px;color=white;outline:none;">
+					<span class="button__text">submit</span>
+       
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>
+        <form action="/sql-data">
+        <a href="\sql-data" style="margin-left:61%">Click to show data</a>				
+			</form>
+</div>
+    </body>  
+
+    
